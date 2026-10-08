@@ -1,0 +1,534 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Sheger Broker | Property & Vehicle Broker</title>  <style>  
+*{  
+  box-sizing:border-box;  
+  margin:0;  
+  padding:0;  
+}  
+  
+html{  
+  scroll-behavior:smooth;  
+}  
+  
+body{  
+  font-family:Arial, sans-serif;  
+  background:#f5f7fb;  
+  color:#172033;  
+  line-height:1.6;  
+}  
+  
+/* HEADER */  
+header{  
+  background:#082b57;  
+  color:white;  
+  padding:18px 6%;  
+  display:flex;  
+  justify-content:space-between;  
+  align-items:center;  
+  position:sticky;  
+  top:0;  
+  z-index:1000;  
+  box-shadow:0 3px 15px #0003;  
+}  
+  
+.brand{  
+  font-size:25px;  
+  font-weight:900;  
+  color:#ffd34d;  
+  line-height:1.05;  
+}  
+  
+.nav{  
+  display:flex;  
+  gap:25px;  
+}  
+  
+.nav a{  
+  color:white;  
+  text-decoration:none;  
+  font-size:17px;  
+  font-weight:bold;  
+}  
+  
+.nav a:hover{  
+  color:#ffd34d;  
+}  
+  
+/* HERO */  
+.hero{  
+  background:linear-gradient(135deg,#08366b,#0b65ad);  
+  color:white;  
+  padding:70px 6%;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+}  
+  
+.hero-content{  
+  width:100%;  
+  max-width:1100px;  
+  display:grid;  
+  grid-template-columns:1fr 1fr;  
+  gap:45px;  
+  align-items:center;  
+}  
+  
+.hero-logo{  
+  background:white;  
+  border-radius:25px;  
+  padding:45px 25px;  
+  text-align:center;  
+  box-shadow:0 15px 40px #0004;  
+}  
+  
+.logo-circle{  
+  width:130px;  
+  height:130px;  
+  margin:auto;  
+  border-radius:50%;  
+  background:#ffd34d;  
+  color:#082b57;  
+  display:flex;  
+  justify-content:center;  
+  align-items:center;  
+  font-size:42px;  
+  font-weight:900;  
+}  
+  
+.hero-logo h2{  
+  color:#082b57;  
+  margin-top:20px;  
+  font-size:27px;  
+}  
+  
+.hero-text h1{  
+  font-size:52px;  
+  margin-bottom:15px;  
+}  
+  
+.hero-text p{  
+  font-size:20px;  
+  margin-bottom:20px;  
+}  
+  
+.am{  
+  color:#e8eef7;  
+}  
+  
+.btn{  
+  display:inline-block;  
+  background:#ffd34d;  
+  color:#082b57;  
+  padding:14px 22px;  
+  border-radius:30px;  
+  text-decoration:none;  
+  font-weight:800;  
+  margin:5px 5px 5px 0;  
+  transition:.2s;  
+}  
+  
+.btn:hover{  
+  transform:translateY(-2px);  
+  box-shadow:0 6px 15px #0003;  
+}  
+  
+/* SECTIONS */  
+section{  
+  padding:60px 6%;  
+}  
+  
+.title{  
+  text-align:center;  
+  margin-bottom:35px;  
+  color:#082b57;  
+  font-size:32px;  
+}  
+  
+/* SERVICES */  
+.cards{  
+  max-width:1100px;  
+  margin:auto;  
+  display:grid;  
+  grid-template-columns:repeat(4,1fr);  
+  gap:20px;  
+}  
+  
+.card{  
+  background:white;  
+  padding:28px 20px;  
+  border-radius:18px;  
+  text-align:center;  
+  box-shadow:0 7px 25px #00000012;  
+  transition:.25s;  
+}  
+  
+.card:hover{  
+  transform:translateY(-6px);  
+  box-shadow:0 12px 30px #0002;  
+}  
+  
+.icon{  
+  font-size:45px;  
+  margin-bottom:12px;  
+}  
+  
+.card h3{  
+  color:#082b57;  
+  font-size:22px;  
+  margin-bottom:10px;  
+}  
+  
+.card p{  
+  color:#586274;  
+}  
+  
+/* WHY US */  
+.why{  
+  background:#eef4fa;  
+}  
+  
+.why-grid{  
+  max-width:1100px;  
+  margin:auto;  
+  display:grid;  
+  grid-template-columns:repeat(3,1fr);  
+  gap:20px;  
+}  
+  
+.why-box{  
+  background:white;  
+  padding:25px;  
+  border-radius:18px;  
+  text-align:center;  
+  box-shadow:0 5px 20px #00000010;  
+}  
+  
+.why-box strong{  
+  display:block;  
+  font-size:20px;  
+  color:#082b57;  
+  margin-bottom:8px;  
+}  
+  
+/* LISTINGS */  
+.listings{  
+  max-width:1100px;  
+  margin:auto;  
+  display:grid;  
+  grid-template-columns:repeat(3,1fr);  
+  gap:22px;  
+}  
+  
+.listing{  
+  background:white;  
+  border-radius:18px;  
+  overflow:hidden;  
+  box-shadow:0 7px 25px #00000012;  
+}  
+  
+.listing-top{  
+  height:150px;  
+  background:linear-gradient(135deg,#0b65ad,#082b57);  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  font-size:60px;  
+}  
+  
+.listing-info{  
+  padding:20px;  
+}  
+  
+.listing-info h3{  
+  color:#082b57;  
+  margin-bottom:8px;  
+}  
+  
+.price{  
+  color:#0b65ad;  
+  font-weight:bold;  
+  font-size:18px;  
+}  
+  
+/* CONTACT */  
+.contact{  
+  background:#082b57;  
+  color:white;  
+  text-align:center;  
+}  
+  
+.contact .title{  
+  color:white;  
+}  
+  
+.contact-info{  
+  max-width:700px;  
+  margin:auto;  
+  font-size:19px;  
+}  
+  
+.contact-buttons{  
+  margin-top:25px;  
+}  
+  
+.whatsapp{  
+  background:#25D366;  
+  color:white;  
+}  
+  
+.call{  
+  background:#ffd34d;  
+  color:#082b57;  
+}  
+  
+/* FOOTER */  
+footer{  
+  background:#061d38;  
+  color:#ddd;  
+  text-align:center;  
+  padding:25px 15px;  
+}  
+  
+/* MOBILE */  
+@media(max-width:800px){  
+  
+  header{  
+    padding:16px 5%;  
+  }  
+  
+  .brand{  
+    font-size:21px;  
+  }  
+  
+  .nav{  
+    gap:13px;  
+  }  
+  
+  .nav a{  
+    font-size:14px;  
+  }  
+  
+  .hero{  
+    padding:45px 5%;  
+  }  
+  
+  .hero-content{  
+    grid-template-columns:1fr;  
+    gap:30px;  
+  }  
+  
+  .hero-text{  
+    text-align:center;  
+  }  
+  
+  .hero-text h1{  
+    font-size:40px;  
+  }  
+  
+  .hero-text p{  
+    font-size:18px;  
+  }  
+  
+  .cards{  
+    grid-template-columns:1fr 1fr;  
+  }  
+  
+  .why-grid{  
+    grid-template-columns:1fr;  
+  }  
+  
+  .listings{  
+    grid-template-columns:1fr;  
+  }  
+  
+  section{  
+    padding:45px 5%;  
+  }  
+  
+  .title{  
+    font-size:27px;  
+  }  
+}  
+  
+@media(max-width:480px){  
+  
+  .cards{  
+    grid-template-columns:1fr;  
+  }  
+  
+  .hero-text h1{  
+    font-size:35px;  
+  }  
+  
+  .hero-logo{  
+    padding:30px 15px;  
+  }  
+  
+  .logo-circle{  
+    width:105px;  
+    height:105px;  
+    font-size:34px;  
+  }  
+  
+  .nav{  
+    gap:10px;  
+  }  
+}  
+</style>  </head>  <body>  <header>  
+  <div class="brand">  
+    SHEGER<br>BROKER  
+  </div>    <nav class="nav">  
+    <a href="#services">Services</a>  
+    <a href="#listings">Listings</a>  
+    <a href="#contact">Contact</a>  
+  </nav>  
+</header>  <!-- HERO -->  <section class="hero">    <div class="hero-content">  <div class="hero-logo">  
+  <div class="logo-circle">SB</div>  
+  <h2>Sheger Broker</h2>  
+  <p>Property & Vehicle Brokerage</p>  
+</div>  
+
+<div class="hero-text">  
+
+  <h1>Sheger Broker</h1>  
+
+  <p>  
+    Trusted property and vehicle brokerage services  
+    in Shaggar & Addis Ababa.  
+  </p>  
+
+  <p class="am">  
+    ቤት፣ መሬት፣ ኪራይ እና መኪና  
+    ለመግዛትና ለመሸጥ ያግኙን።  
+  </p>  
+
+  <a class="btn call" href="tel:+251909092994">  
+    📞 Call 0909092994  
+  </a>  
+
+  <a class="btn call" href="tel:+251912277733">  
+    📞 Call 0912277733  
+  </a>  
+
+</div>
+
+  </div>  </section>  <!-- SERVICES -->  <section id="services">    <h2 class="title">  
+    Our Services | አገልግሎቶቻችን  
+  </h2>    <div class="cards">  <div class="card">  
+  <div class="icon">🏠</div>  
+  <h3>Houses</h3>  
+  <p>Buy, sell and find homes.</p>  
+  <p>ቤቶችን ለመግዛትና ለመሸጥ ያግኙን።</p>  
+</div>  
+
+<div class="card">  
+  <div class="icon">🏘️</div>  
+  <h3>Rentals</h3>  
+  <p>Homes and properties for rent.</p>  
+  <p>የኪራይ ቤቶችን ያግኙ።</p>  
+</div>  
+
+<div class="card">  
+  <div class="icon">🌳</div>  
+  <h3>Land</h3>  
+  <p>Land opportunities in Shaggar & Addis Ababa.</p>  
+  <p>የመሬት አማራጮች።</p>  
+</div>  
+
+<div class="card">  
+  <div class="icon">🚗</div>  
+  <h3>Cars</h3>  
+  <p>Connect buyers and sellers of vehicles.</p>  
+  <p>መኪና ለመግዛትና ለመሸጥ ያግኙን።</p>  
+</div>
+
+  </div>  </section>  <!-- WHY US -->  <section class="why">    <h2 class="title">  
+    Why Choose Sheger Broker?  
+  </h2>    <div class="why-grid">  <div class="why-box">  
+  <strong>📍 Local Focus</strong>  
+  <p>  
+    We focus on Shaggar and Addis Ababa.  
+  </p>  
+</div>  
+
+<div class="why-box">  
+  <strong>🤝 Trusted Service</strong>  
+  <p>  
+    We connect buyers, sellers and renters.  
+  </p>  
+</div>  
+
+<div class="why-box">  
+  <strong>📞 Easy Contact</strong>  
+  <p>  
+    Call or WhatsApp us directly.  
+  </p>  
+</div>
+
+  </div>  </section>  <!-- LISTINGS -->  <section id="listings">    <h2 class="title">  
+    Featured Listings  
+  </h2>    <div class="listings">  <div class="listing">  
+  <div class="listing-top">🏠</div>  
+  <div class="listing-info">  
+    <h3>Residential House</h3>  
+    <p>Shaggar / Addis Ababa</p>  
+    <p class="price">Contact us for price</p>  
+  </div>  
+</div>  
+
+<div class="listing">  
+  <div class="listing-top">🌳</div>  
+  <div class="listing-info">  
+    <h3>Land Property</h3>  
+    <p>Shaggar Area</p>  
+    <p class="price">Contact us for price</p>  
+  </div>  
+</div>  
+
+<div class="listing">  
+  <div class="listing-top">🚗</div>  
+  <div class="listing-info">  
+    <h3>Vehicle</h3>  
+    <p>Addis Ababa</p>  
+    <p class="price">Contact us for price</p>  
+  </div>  
+</div>
+
+  </div>  </section>  <!-- CONTACT -->  <section id="contact" class="contact">    <h2 class="title">  
+    Contact Sheger Broker  
+  </h2>    <div class="contact-info">  <p>📞 0909092994 &nbsp; | &nbsp; 0912277733</p>  
+
+<p>📍 Shaggar & Addis Ababa, Ethiopia</p>  
+
+<div class="contact-buttons">  
+
+  <a class="btn call" href="tel:+251909092994">  
+    📞 Call 0909092994  
+  </a>  
+
+  <a class="btn call" href="tel:+251912277733">  
+    📞 Call 0912277733  
+  </a>  
+
+  <br>  
+
+  <a class="btn whatsapp"  
+     href="https://wa.me/251909092994"  
+     target="_blank">  
+    💬 WhatsApp 0909092994  
+  </a>  
+
+  <a class="btn whatsapp"  
+     href="https://wa.me/251912277733"  
+     target="_blank">  
+    💬 WhatsApp 0912277733  
+  </a>  
+
+</div>
+
+  </div>  </section>  <footer>  
+  © 2026 Sheger Broker — Your Trusted Property & Vehicle Partner  
+</footer>  </body>  
+</html>
